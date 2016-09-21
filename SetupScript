@@ -30,3 +30,7 @@ git config --global push.default simple
 git init
 git remote add origin https://github.com/Alerosin/Robots.git
 git pull origin master
+
+# Fix mouse  
+echo "xinput set-prop 'Microsoft Microsoft® Comfort Mouse 4500' 'Evdev Scrolling Distance' 8 1 1" >> ~/.bashrc
+echo "xinput set-prop 'Microsoft Microsoft® Comfort Mouse 4500' 'Device Accel Velocity Scaling' 1" >> ~/.bashrc
