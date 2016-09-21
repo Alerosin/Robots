@@ -1,0 +1,33 @@
+# !/bin/bash
+
+sudo apt-get update -y
+
+# Git Install
+sudo apt install git -y
+
+
+# ROS Install
+echo "Install ROS"
+sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" >ls  /etc/apt/sources.list.d/ros-latest.list'
+sudo apt-key adv --keyserver hkp://ha.pool.sks-keyservers.net:80 --recv-key 0xB01FA116
+sudo apt-get update -y
+sudo apt-get install ros-kinetic-desktop-full -y
+sudo rosdep init
+rosdep update
+
+echo "source /opt/ros/kinetic/setup.bash" >> ~/.bashrc
+source ~/.bashrc
+
+sudo apt-get install python-rosinstall -y
+
+# Setup Git repo
+sudo mkdir ~/Code
+sudo mkdir ~/Code/Robots
+cd ~/Code/Robots
+git config --global user.name "Alex"
+git config --global user.email "alex_halle@hotmail.com"
+git init
+git remote add origin https://github.com/Alerosin/Robots.git
+git pull
+
+
