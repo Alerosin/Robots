@@ -5,6 +5,8 @@ sudo apt-get update -y
 # Git Install
 sudo apt install git -y
 
+# Check that source download is enabled
+read -p ">>> I hope you've enabled source code downloads in Software & Updates!" yn
 
 # ROS Install
 echo "Install ROS"
